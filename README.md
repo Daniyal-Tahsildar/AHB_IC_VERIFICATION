@@ -8,7 +8,8 @@ The AHB5 protocol is a critical part of modern System-on-Chip (SoC) designs, pro
 
 ### Run Instructions <br>
 To enhance the provided instructions for configuring and running the testbench with varying numbers of Masters and Slaves (Currently the testbench is set up for a maximum of 3 masters and 4 slaves), as well as modifying the number of transactions, you can consider the following refined version:
-Configuring and Running the Testbench for Different Master and Slave Counts
+
+**Configuring and Running the Testbench for Different Master and Slave Counts**
 
 1. ***Configuration in `common.sv`***
 
@@ -19,7 +20,7 @@ Configuring and Running the Testbench for Different Master and Slave Counts
    static int num_slaves = 3;
    static int num_masters = 3;
 
-***Customizing Test Parameters***
+2. ***Customizing Test Parameters***
 
 If you want to control the number of transactions for specific tests, you can do so by editing the appropriate test classes. Open the `test.sv` file and locate the relevant test classes. Some tests may have already been configured with this feature. If not, you can modify the tests to include this capability.
 ```systemverilog
@@ -32,7 +33,7 @@ function void build_phase (uvm_phase phase);
     // Test code here
 endclass
 ```
-***Troubleshooting Tests***
+3. ***Troubleshooting Tests***
 
 If you encounter issues while running tests, particularly when changing the number of transactions or other parameters, begin by reviewing the specific test class in the `test.sv` file. Verify that the test class is correctly configured with the desired parameters.
 
