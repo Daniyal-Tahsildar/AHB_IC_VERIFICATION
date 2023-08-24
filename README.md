@@ -41,6 +41,8 @@ To enhance the provided instructions for configuring and running the testbench w
 
    If a test still doesn't behave as expected, consider debugging step by step, checking the interactions between sequences, sequences and items, as well as sequences and drivers.
 
+*Do try running the code and having a look at the simulation as well as the log file.*
+
 </br>
 
 ## AHB Interconnect 
