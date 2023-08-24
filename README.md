@@ -4,8 +4,41 @@ This repository hosts a comprehensive UVM-based testbench for validating an AHB5
 
 The AHB5 protocol is a critical part of modern System-on-Chip (SoC) designs, providing high-performance and low-latency communication between different IP blocks. This project aims to verify the functionality and performance of an AHB5 interface using the Universal Verification Methodology (UVM), a widely adopted framework for verification in the semiconductor industry.
 
-**EDA Playground link :** [AHB_IC_VERIFICATION](https://www.edaplayground.com/x/Ff8B)
+**EDA Playground link :** [AHB_IC_VERIFICATION](https://www.edaplayground.com/x/Ff8B) <br>
 
+P.S.:<br>
+If you want to run the TB with different number of Masters and Slaves, change num_masters and num_slaves in the `common.sv` file. Currently the testbench is set up for a maximum of 3 masters and 4 slaves. You can also change the number of transactions for each test from this file. Currently only a few tests have this feature enabled, so if you are running a different tests and things dont seem to work out as they shoud, start going through that particular test class in `test.sv` and then also check the sequence(s) it runs in the `sequence.sv` file.
+
+To enhance the provided instructions for configuring and running the testbench with varying numbers of Masters and Slaves, as well as modifying the number of transactions, you can consider the following refined version:
+Configuring and Running the Testbench for Different Master and Slave Counts
+
+1. ***Configuration in `common.sv`***
+
+   In the `common.sv` file, you can easily customize the number of Masters and Slaves based on your test scenario. Locate the parameters `num_masters` and `num_slaves` and adjust them to your desired values.
+
+   ```systemverilog
+   // Configuration for number of Masters and Slaves
+   parameter int num_masters = 3;
+   parameter int num_slaves = 4;
+Customizing Test Parameters
+
+If you want to control the number of transactions for specific tests, you can do so by editing the appropriate test classes. Open the test.sv file and locate the relevant test classes. Some tests may have already been configured with this feature. If not, you can modify the tests to include this capability.
+
+class MyTest extends uvm_test;
+    int num_transactions = 10; // Set the number of transactions for this test
+
+    // Test code here
+endclass
+
+Troubleshooting Tests
+
+If you encounter issues while running tests, particularly when changing the number of transactions or other parameters, begin by reviewing the specific test class in the test.sv file. Verify that the test class is correctly configured with the desired parameters.
+
+Additionally, some issues might be related to the sequences that the test class runs. Open the sequence.sv file and review the sequences being used in the test. Ensure that the sequences are compatible with the test class and any changes you've made.
+
+If a test still doesn't behave as expected, consider debugging step by step, checking the interactions between sequences, sequences and items, as well as sequences and drivers.
+
+</br>
 ## AHB Interconnect 
   
 - The AHB5 Interconnect is a crucial component in modern System-on-Chip (SoC) designs, facilitating seamless communication among different on-chip modules and intellectual property (IP) blocks.
