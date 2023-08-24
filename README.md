@@ -98,6 +98,9 @@ The interconnect module determines the target slave by referencing slave address
 <p align="center">
 <img width="60%" src="Images/AHB_UVC_Diagram.png"/> </p>
 <p align="center"><em> AHB UVC Diagram</em> </p>
+
+### Waveforms 
+TODO: SS from EDA
   
 ### Features
 - Complete UVM-based testbench for AHB5 interface verification.
