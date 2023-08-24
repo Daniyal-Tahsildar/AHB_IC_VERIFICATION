@@ -114,4 +114,7 @@ The interconnect module determines the target slave by referencing slave address
 - [Common](Common) : This directory houses essential files that are shared and utilized across the entire testbench.
 
 
-  TODO: Update ReadMe
+  TODO:
+     - Add sequence layering test example
+     - Update ReadMe
+  
