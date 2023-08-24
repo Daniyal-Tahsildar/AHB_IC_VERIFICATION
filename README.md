@@ -22,24 +22,24 @@ To enhance the provided instructions for configuring and running the testbench w
 
 2. ***Customizing Test Parameters***
 
-If you want to control the number of transactions for specific tests, you can do so by editing the appropriate test classes. Open the `test.sv` file and locate the relevant test classes. Some tests may have already been configured with this feature. If not, you can modify the tests to include this capability.
-```systemverilog
-// In build phase of test:
-function void build_phase (uvm_phase phase);
-        super.build_phase(phase);
-        ahb_common::total_tx = 2*ahb_common::num_tx*ahb_common::num_masters;
-        uvm_resource_db#(int)::set("GLOBAL", "NUM_TX", ahb_common::num_tx , this);
-    endfunction
-    // Test code here
-endclass
-```
+   If you want to control the number of transactions for specific tests, you can do so by editing the appropriate test classes. Open the `test.sv` file and locate the relevant test classes. Some tests may have already been configured with this feature. If not, you can    modify the tests to include this capability.
+   ```systemverilog
+   // In build phase of test:
+   function void build_phase (uvm_phase phase);
+           super.build_phase(phase);
+           ahb_common::total_tx = 2*ahb_common::num_tx*ahb_common::num_masters;
+           uvm_resource_db#(int)::set("GLOBAL", "NUM_TX", ahb_common::num_tx , this);
+       endfunction
+       // Test code here
+   endclass
+   ```
 3. ***Troubleshooting Tests***
 
-If you encounter issues while running tests, particularly when changing the number of transactions or other parameters, begin by reviewing the specific test class in the `test.sv` file. Verify that the test class is correctly configured with the desired parameters.
+   If you encounter issues while running tests, particularly when changing the number of transactions or other parameters, begin by reviewing the specific test class in the `test.sv` file. Verify that the test class is correctly configured with the desired parameters.
 
-Additionally, some issues might be related to the sequences that the test class runs. Open the `sequence.sv` file and review the sequences being used in the test. Ensure that the sequences are compatible with the test class and any changes you've made.
+   Additionally, some issues might be related to the sequences that the test class runs. Open the `sequence.sv` file and review the sequences being used in the test. Ensure that the sequences are compatible with the test class and any changes you've made.
 
-If a test still doesn't behave as expected, consider debugging step by step, checking the interactions between sequences, sequences and items, as well as sequences and drivers.
+   If a test still doesn't behave as expected, consider debugging step by step, checking the interactions between sequences, sequences and items, as well as sequences and drivers.
 
 </br>
 
