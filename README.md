@@ -116,7 +116,7 @@ TODO: SS from EDA
 
 ### Directory Specifications:
 
-- [Common](Common) : This directory houses essential files that are shared and utilized across the entire testbench.
+- [Common](COMMON) : This directory houses essential files that are shared and utilized across the entire testbench.
 
 
   TODO:
