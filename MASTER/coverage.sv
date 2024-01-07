@@ -18,5 +18,6 @@ class ahb_cov extends uvm_subscriber#(ahb_tx);
     function void write (ahb_tx t);
         $cast(tx, t);
         ahb_cg.sample();
+        `uvm_info("AHB_COVERAGE",$psprintf("Coverage = %0f", ahb_cg.get_inst_coverage()),UVM_NONE);
     endfunction
 endclass
